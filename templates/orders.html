@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order List</title
+</head>
+<body>
+<div>
+<h2 style="Color:Green" align="center">Orders</h2>
+
+
+<p style="float: left;
+    width: 100%;
+    text-align: right;">
+    Welcome {{session['fname']+' '+session['lname']}}, <a href="http://localhost:5000/logout" style="float:right">Logout</a>
+</p>
+<br><br>
+
+    <table style="border-spacing:0;" align="center" width="80%" cellpadding="5">
+        <thead style="background-color: forestgreen; font-family: calibri;">
+        <tr>
+            <th style="padding:5px;">OrderId</th>
+            <th>product</th>
+            <th>amount</th>
+            <th>Order Date</th>
+            {% if session['role'] == 'Admin' %}
+                <th>Customer</th>
+            {% endif %}
+            {% if session['role'] == 'User' %}
+                <th>Action</th>
+            {% endif %}
+        </tr>
+        </thead>
+        {% for ord in orderlist %}
+            <tbody>
+            <tr style="background-color: lightgray; font-family:calibri">
+            <td>{{ord.id}}</td>
+            <td>{{ord.product}}</td>
+            <td>{{ord.orderamount}}</td>
+            <td>{{ord.created_on}}</td>
+            {% if session['role'] == 'Admin' %}
+                <td>{{ord.fname}}</td>
+            {% endif %}
+            <td>
+                {% if session['role'] == 'User' %}
+                <a href="http://localhost:5001/orders/edit/{{ord.id}}">EDIT</a>
+                <a href="http://localhost:5001/orders/delete/{{ord.id}}">Delete</a>
+                {% endif %}
+            </td>
+            {% endfor %}
+            </tr>
+            </tbody>
+    </table>
+
+<br>
+
+<br><br>
+    <p align="center">
+    <a href="http://localhost:5001/createorder">Create New Order</a><br><br>
+    {% if session['role'] == 'Admin' %}
+        <a href="http://localhost:5000/options">Back</a>
+    {% endif %}
+    </div>
+</body>
+</html>

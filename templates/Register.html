@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+<body>
+    <div>
+        <br>
+        <h1>Customer Registration Form</h1>
+        <br><br>
+        <div class="page-wrapper">
+            <form  action="http://localhost:5000/customer/register" method="post">
+                <div class="row">
+                    <div class="label"> Username: </div>
+                    <div class="data"><input type="text" name="username"></div>
+                </div>
+                <div class="row">
+                   <div class="label"> Password: </div>
+                    <div class="data"><input type="password" name="password"></div>
+                </div>
+                <div class="row">
+                   <div class="label"> First Name: </div>
+                    <div class="data"><input type="text" placeholder="Enter Your First Name" name="fnm" value="{{cust.fname}}"></div>
+                </div>
+                <div class="row">
+                   <div class="label">Last Name: </div>
+                    <div class="data"><input type="text" placeholder="Enter Your Last Name" name="lnm" value="{{cust.lname}}"></div>
+                </div>
+                <div class="row">
+                   <div class="label">Gender: </div>
+                    <div class="data"><input type="radio" name="gen" value="male"> Male
+                                    <input type="radio" name="gen" value="female"> Female</div>
+                </div>
+                <div class="row">
+                   <div class="label">Email: </div>
+                    <div class="data"><input type="text" placeholder="Enter Email" name="email" value="{{cust.email}}"></div>
+                </div>
+                <div class="row">
+                   <div class="label">City:</div>
+                    <div class="data"><input type="text" placeholder="Enter City" name="city" value="{{cust.city}}"></div>
+                </div>
+                <div class="row">
+                   <div class="label">State:</div>
+                    <div class="data"><input type="text" placeholder="Enter State" name="state" value="{{cust.state}}"></div>
+                </div>
+                <div class="row">
+                   <div class="label">Pincode:</div>
+                    <div class="data"><input type="text" placeholder="Enter Pincode" name="pin" value="{{cust.pincode}}"></div>
+                </div>
+                <div class="row">
+                    <div class="label"></div>
+                    <div class="data">
+                        <input type="submit" class="form-btn" value="Submit"/>
+                    </div>
+
+                </div>
+            </form>
+            </div>
+    </div>
+
+</body>
+</html>

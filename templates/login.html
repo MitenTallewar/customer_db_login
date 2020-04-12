@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+
+<h1> Log in Page...!</h1>
+
+<body>
+<br>
+
+<center style="color:red">{{msg}}</center>
+
+<br>
+    <div class="page-wrapper">
+        <form action="http://localhost:5000/user/" method="post">
+            <div class="row">
+                <div class="login-lable">  Username :</div>
+                    <div><input type="text" class="input-box" name="username"></div>
+            </div>
+            <div class="row">
+                <div class="login-lable"> Password :</div>
+                    <div><input type="password" class="input-box" name="password"></div>
+            </div>
+                <div class="form-btn">
+                        <input type="submit"  value="Login" name="Login" class="btn btn-success"/>
+                </div>
+        </form>
+    </div>
+        <br>
+<p align="center">
+<a href="http://localhost:5000/customer/register">Register Here</a>
+</p>
+</body>
+</html>

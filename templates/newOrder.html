@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Order</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1 align="center"> Place new Order</h1>
+<p style="float:right">
+    Welcome {{session['fname']+' '+session['lname']}}, <a href="http://localhost:5000/logout" style="float:right">Logout</a>
+</p>
+<br><br>
+
+<form action="http://localhost:5001/order/save" method="post">
+    <input type="hidden" name="id" value="{{ord.id}}">
+    Product : <input type="text" name="product" value="{{ord.product}}"> <br><br>
+    Amount : <input type="text" name="amount" value="{{ord.orderamount}}"> <br><br>
+    <input type="submit" value="Submit" class="btn btn-success"/>
+</form>
+</body>
+</html>
