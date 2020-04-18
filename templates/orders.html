@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Order List</title
+    <title>Order List</title>
 </head>
 <body>
 <div>
@@ -13,7 +13,7 @@
 <p style="float: left;
     width: 100%;
     text-align: right;">
-    Welcome {{session['fname']+' '+session['lname']}}, <a href="http://localhost:5000/logout" style="float:right">Logout</a>
+    Welcome {{session['fname']+' '+session['lname']}}, <a href="/logout" style="float:right">Logout</a>
 </p>
 <br><br>
 
@@ -44,8 +44,8 @@
             {% endif %}
             <td>
                 {% if session['role'] == 'User' %}
-                <a href="http://localhost:5001/orders/edit/{{ord.id}}">EDIT</a>
-                <a href="http://localhost:5001/orders/delete/{{ord.id}}">Delete</a>
+                <a href="/orders/edit/{{ord.id}}">EDIT</a>
+                <a href="/orders/delete/{{ord.id}}">Delete</a>
                 {% endif %}
             </td>
             {% endfor %}
@@ -57,9 +57,9 @@
 
 <br><br>
     <p align="center">
-    <a href="http://localhost:5001/createorder">Create New Order</a><br><br>
+    <a href="/createorder">Create New Order</a><br><br>
     {% if session['role'] == 'Admin' %}
-        <a href="http://localhost:5000/options">Back</a>
+        <a href="/options">Back</a>
     {% endif %}
     </div>
 </body>

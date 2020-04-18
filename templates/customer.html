@@ -10,7 +10,7 @@
 <div>
 <br>
 <p style="float:right">
-    Welcome {{session['fname']+' '+session['lname']}}, <a href="http://localhost:5000/logout" style="float:right">Logout</a>
+    Welcome {{session['fname']+' '+session['lname']}}, <a href="/logout" style="float:right">Logout</a>
 </p>
 
 {% if session['role'] == 'Admin'%}
@@ -48,7 +48,7 @@
             <td>{{cr.state}}</td>
             <td>{{cr.pincode}}</td>
             <td>
-                <a href="http://localhost:5000/customer/delete/{{cr.id}}">Delete</a>
+                <a href="/customer/delete/{{cr.id}}">Delete</a>
             </td>
             {% endfor %}
             </tr>
@@ -56,13 +56,13 @@
     </table>
 <br>
 <p align="center">
-<a href="http://localhost:5000/options">Back</a>
+<a href="/options">Back</a>
 </p>
 {% else %}
 <h1>You are not allowed to accesss this page, this page can only be accessible by Admin Role</h1>
 
 <p>
-    <a href="http://localhost:5000/orders">Back to Orders Page</a>
+    <a href="/orders">Back to Orders Page</a>
 </p>
 {% endif %}
 </div>

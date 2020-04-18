@@ -176,13 +176,16 @@ def list_of_orders():
         userDetails= user.query.filter(user.username==username).first()
         return render_template("orders.html",orderlist=Orders.query.filter(Orders.cid==userDetails.id).all())
 
+
 @app.route("/orders/edit/<int:oid>")
 def fetch_order(oid):
-    # ord = Orders.query.filter(Customer.id == Orders.id).first()
+    ord = Orders.query.filter(Customer.id == Orders.id).first()
+
     print(ord)
     # ord = Orders.query.filter_by(id=oid).first()
     print("=----------------------")
-    return render_template('neworder.html',ord = Orders.query.filter_by(id=oid).first())
+    return render_template('newOrder.html',ord = Orders.query.filter_by(id=oid).first())
+
 
 @app.route("/orders/delete/<int:oid>")
 def delete_order(oid):
@@ -197,4 +200,4 @@ def delete_order(oid):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=80)

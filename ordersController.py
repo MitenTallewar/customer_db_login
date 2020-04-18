@@ -1,6 +1,6 @@
 from flask import Flask,request,render_template,session
 from customer_db_login.models import *
-import json
+
 
 @app.route("/createorder", methods=['GET','POST'])
 def create_order():
