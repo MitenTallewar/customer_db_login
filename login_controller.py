@@ -115,7 +115,7 @@ def delete_customer(cid):
 def create_order():
     ord1={'id' : '',
     'orderamount' : ''}
-    return render_template("newOrder.html",ord=ord1)
+    return render_template("newOrder.html",ord=ord1,pagename="New Order")
 
 
 @app.route("/order/save",methods=['POST'])
@@ -184,7 +184,7 @@ def fetch_order(oid):
     print(ord)
     # ord = Orders.query.filter_by(id=oid).first()
     print("=----------------------")
-    return render_template('newOrder.html',ord = Orders.query.filter_by(id=oid).first())
+    return render_template('newOrder.html',ord = Orders.query.filter_by(id=oid).first(),pagename="Update your order")
 
 
 @app.route("/orders/delete/<int:oid>")

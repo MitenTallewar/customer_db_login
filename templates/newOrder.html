@@ -11,7 +11,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1 align="center"> Place new Order</h1>
+
+    <h1 align="center"> {{pagename}}</h1>
 <p style="float:right">
     Welcome {{session['fname']+' '+session['lname']}}, <a href="/logout" style="float:right">Logout</a>
 </p>
@@ -22,6 +23,8 @@
     Product :<input type="text" name="product" value="{{ord.product}}"> <br><br>
     Amount : <input type="text" name="amount" value="{{ord.orderamount}}"> <br><br>
     <input type="submit" value="Submit" class="btn btn-success"/>
+    <input type="button" value="Back" onclick="{window.location.href='/orders';}" class="btn btn-success"/>
 </form>
+
 </body>
 </html>
